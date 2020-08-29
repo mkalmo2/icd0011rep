@@ -1,4 +1,6 @@
-package exrep;
+package mapper;
+
+import common.Person;
 
 public class PersonMapper {
 

@@ -1,13 +1,15 @@
-package exrep;
+package mapper;
 
-public class PersonMapperTester {
+import common.Person;
+
+public class Main {
 
     public static void main(String[] args) {
 
         PersonMapper mapper = new PersonMapper();
 
-        Person person = mapper.parse("{ \"name\": \"Jill\" }");
-                                   // { "name": "Jill" }
+        Person person = mapper.parse("{ \"firstName\": \"Alice\" }");
+        // { "firstName": "Alice" }
 
         System.out.println(person);
 
@@ -16,5 +18,4 @@ public class PersonMapperTester {
         System.out.println(dataAsString);
 
     }
-
 }
