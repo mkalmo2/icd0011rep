@@ -8,6 +8,13 @@ public class Person {
 
     private int age;
 
+    public Person() {}
+
+    public Person(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -18,11 +25,6 @@ public class Person {
 
     public int getAge() {
         return age;
-    }
-
-    public Person(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
     }
 
     public void setAge(int age) {
