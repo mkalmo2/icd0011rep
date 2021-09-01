@@ -19,21 +19,10 @@ public class ListLexer {
 
         while (!eof()) {
 
-            if (Character.isWhitespace(nextChar())) {
-                consume();
-            } else if ('[' == nextChar()) {
-                tokens.add(Token.LEFT_BRACKET);
-                consume();
-            } else if (']' == nextChar()) {
-                tokens.add(Token.RIGHT_BRACKET);
-                consume();
-            } else if (',' == nextChar()) {
-                tokens.add(Token.COMMA);
-                consume();
-            } else if (isDigit(nextChar())) {
-                tokens.add(Token.number(readNumber()));
+            if (Character.isWhitespace(lookahead())) {
+               // ...
             } else {
-                throw new RuntimeException("unexpected character: " + nextChar());
+                throw new RuntimeException("unexpected character: " + lookahead());
             }
         }
 
@@ -42,7 +31,7 @@ public class ListLexer {
 
     private Integer readNumber() {
         StringBuilder sb = new StringBuilder();
-        while (!eof() && isDigit(nextChar())) {
+        while (!eof() && isDigit(lookahead())) {
             sb.append(consume());
         }
         return Integer.parseInt(sb.toString());
@@ -56,7 +45,7 @@ public class ListLexer {
         return data.charAt(pos++);
     }
 
-    private char nextChar() {
+    private char lookahead() {
         return data.charAt(pos);
     }
 }

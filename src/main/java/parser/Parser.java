@@ -1,34 +1,24 @@
 package parser;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Parser {
 
-    private List<Token> tokens;
+    private final List<Token> tokens;
     private int pos = 0;
-    public List<Object> currentList;
 
     public Parser(List<Token> tokens) {
         this.tokens = tokens;
     }
 
     public Object parse() {
-        currentList = new ArrayList<>();
-
         list();
 
-        return currentList.get(0);
+        return null;
     }
 
     private void list() {
-        var surroundingList = currentList;
-        currentList = new ArrayList<>();
-        surroundingList.add(currentList);
-
         match(TokenType.LEFT_BRACKET); elements(); match(TokenType.RIGHT_BRACKET);
-
-        currentList = surroundingList;
     }
 
     private void elements() {
@@ -49,9 +39,7 @@ public class Parser {
     }
 
     private void number() {
-        var numberToken = match(TokenType.NUMBER);
-
-        currentList.add(numberToken.getValue());
+        match(TokenType.NUMBER);
     }
 
     private Token match(TokenType type) {
