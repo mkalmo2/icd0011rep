@@ -4,3 +4,7 @@ plugins {
 
 sourceCompatibility = 16
 
+task runMain(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = "mapper.Main"
+}
