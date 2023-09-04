@@ -4,7 +4,7 @@ plugins {
 
 sourceCompatibility = 17
 
-task runMain(type: JavaExec) {
+tasks.register('runMain', JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     mainClass.set("mapper.Main")
 }
