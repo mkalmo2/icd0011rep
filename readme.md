@@ -1,10 +1,5 @@
 Java kordamine
 
-Importige ülesande toorik.
-
-IDEA-st File -\> New -\> Project from Version Control -\> Git ja
-kirjutage https://github.com/mkalmo2/icd0011rep URL-iks.
-
 1.  Kirjutage lõpuni klass mapper.PersonMapper, mis teisendab stringi
     kujul olevad andmed objektiks ja vastupidi.
 
